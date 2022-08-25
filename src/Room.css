@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.Room{
+    font-family: 'Poppins', sans-serif;
+}
+
+.Room .header{
+    height: 50px;
+    
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 30px;
+
+}
+
+.Room span{
+    font-weight: bold;
+}
+
+
+.Room .forQuestion{
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid #D6CEC1; 
+    border-radius: 20px;
+    padding: 20px;
+}

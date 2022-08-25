@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: #fbf3f2;
+}
+
+.StarterPage{
+    margin: 0 auto;
+    display: block;
+    margin-top: 10%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.StarterPage button{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.StarterPage input{
+    margin: 0 auto;
+    display: block;
+    width: 20%
+}

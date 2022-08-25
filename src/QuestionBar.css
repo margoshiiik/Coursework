@@ -1,0 +1,27 @@
+.QuestionBar {
+    width: 80%; 
+    border: 2px solid #D6CEC1;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    height: 500px;
+    overflow: auto;
+}
+
+.message{
+    font-size: 20px; 
+    padding: 10px 0;
+}
+
+.message:hover{
+    border-radius: 10px;
+    background-color: #eadcd5;
+}
+
+.dateMessage{
+    font-size: 11px;
+    float: right;
+    margin-right: 5px;
+    color: #979188;
+}
