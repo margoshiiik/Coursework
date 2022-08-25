@@ -51,6 +51,20 @@ app.post('/api/insertRoom', (req, res) => {
     }); 
 })
 
+app.post('/api/insertQuestion', (req, res) => {
+
+    const text = req.body.text; 
+    const data = req.body.data; 
+    const user = req.body.user_id;
+    const room =  req.body.room_id;
+
+
+    const sqlInsert = "INSERT INTO questions (user_id, room_id, text, data) VALUES (?, ?, ?, ?)"
+    db.query(sqlInsert, [user, room, text, data], (err, result) => {
+        console.log(err)
+    }); 
+})
+
 //update roomList in user
 app.post('/api/updateUser', (req, res) => {
     const rooms = req.body.rooms; 
@@ -73,14 +87,26 @@ app.post('/api/updateRoom', (req, res) => {
     }); 
 })
 
-app.post('/api/enterRoom', (req, res) => {
-    // const rooms = req.body.rooms; 
-    // const user_id = req.body.user; 
+app.get('/api/getUsersRooms', (req, res) => {
+     const id = req.query.id; 
+     console.log(req.query.id)
 
-    // const sqlUpdate = "UPDATE rooms SET users = ? WHERE rooms.user_id = ?"
-    // db.query(sqlUpdate, [rooms, user_id], (err, result) => {
-    //     console.log(err)
-    // }); 
+    const sqlGetRooms = "SELECT * FROM rooms WHERE user_id = ?"
+    db.query(sqlGetRooms, [id], (err, result) => {
+        res.send(result);
+    }); 
+})
+
+
+app.get('/api/getQuestion', (req, res) => {
+    const id = req.query.id; 
+    console.log(req.query.id)
+
+   const sqlGetQuestions = "SELECT * FROM questions WHERE room_id = ?"
+   db.query(sqlGetQuestions, [id], (err, result) => {
+       console.log(res)
+       res.send(result);
+   }); 
 })
 
 app.get('/api/enterRoom', (req, res) => {
